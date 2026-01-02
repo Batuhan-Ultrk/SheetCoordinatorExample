@@ -19,7 +19,14 @@ struct SettingsView: View {
             Text("Settings View")
 
             Button {
-                appSheetCoordinator.presentSheet(.editName)
+                appSheetCoordinator.presentSheet(
+                    .editName(
+                        paramater: .init(
+                            name: "Test",
+                            email: "Test@test.com"
+                        )
+                    )
+                )
             } label: {
                 Text("Go To Edit Name View")
             }

@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct EditNameView: View {
+    let paramater: NameAndEmailParamaters
     @EnvironmentObject var appSheetCoordinator: SheetCoordinator<AppSheet>
 
     var body: some View {
         bodyView
+            .onAppear {
+                print("Email: \(String(describing: paramater.email))")
+                print("Name: \(String(describing: paramater.name))")
+            }
     }
 
     var bodyView: some View {
@@ -37,5 +42,7 @@ struct EditNameView: View {
 }
 
 #Preview {
-    EditNameView()
+    EditNameView(
+        paramater: .init()
+    )
 }

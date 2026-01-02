@@ -10,7 +10,7 @@ import SwiftUI
 enum AppSheet: SheetEnum {
     case profile
     case settings
-    case editName
+    case editName(paramater: NameAndEmailParamaters)
 
     var presentationDetents: Set<PresentationDetent> { [.large] }
     var presentationDragIndicator: Visibility { .hidden }
@@ -37,8 +37,8 @@ enum AppSheet: SheetEnum {
         case .settings:
             SettingsView()
 
-        case .editName:
-            EditNameView()
+        case .editName(let paramater):
+            EditNameView(paramater: paramater)
         }
     }
 }
